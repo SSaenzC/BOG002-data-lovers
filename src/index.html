@@ -6,17 +6,41 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+
     <header>
       <nav class="container">
-        
-       <a href="#caracteristicas" class="menu">Poke Caracteristicas</a>
-       <a href="#filtros" class="menu">Poke Filtros</a>
+        <div class="logoimg">
+          <img id="logoimg" src="..//src/imagenes/logo pokemon.png" alt="">
+        </div>
+       
+        <div class="navegador">
+          <a href="#caracteristicas" id="tituloCaracteristicas">Pokédex</a> 
+         
+         </div>
       </nav>
     </header>
+
+
     <main class="container">
         <h1>Bienvenido a Pokemon Go</h1>
         <button id="informacion">Ver más</button>
     </main>
+
+
+   <section class="container">
+     <div class="contenedor" id="caracteristicas">
+       <div class="imagen"> 
+         <img id="imagen" src="../src/imagenes/pokemonj.png" alt="">
+       </div>
+     </div>
+      <br>
+     <div class="contenedor">
+      <div class="imagen"> 
+        <img id="imagen" src="../src/imagenes/pokemonj.png" alt="">
+      </div>
+    </div>
+   </section>
+
     <footer class="container">
       <div class="img-footer">
         <img  id="Whatsapp" src="../src/imagenes/Whatsapp.jpg"  alt="">
@@ -25,8 +49,8 @@
         <img  id="twitter" src="../src/imagenes/twitter.jpg"   alt="">
         <h3>by Susan Saenz & Carol Marulanda</h3>
       </div>
-
     </footer>
+
     <div id="root"></div>
     <script src="main.js" type="module"></script>
   </body>
