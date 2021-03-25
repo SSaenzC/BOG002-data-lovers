@@ -119,8 +119,7 @@
     }
    
     #Whatsapp{
-        width: 10%;
-        text-align: center;
+        width: 10%;        text-align: center;
         display: inline-flex;
         flex-direction: wrap;
         justify-content: center;
