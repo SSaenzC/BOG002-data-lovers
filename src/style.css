@@ -154,6 +154,19 @@
         align-items: center;
     }
   
+    /*pokédex*/
+
+    .card{
+      background-color: lightcoral;
+      width: 100%;
+    }
+
+    #imgpokedex{
+      width: 20%;
+      height: 30vh;
+    }
+
+
 
 
 
