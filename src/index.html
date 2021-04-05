@@ -6,28 +6,24 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-
-    <header>
-      <nav class="container">
-        <div class="logoimg">
-          <img id="logoimg" src="..//src/imagenes/logo pokemon.png" alt="">
+    <div class="padre">
+      <header class="header">
+        <div class="menu">
+            <div class="logo">
+              <img src="../src/imagenes/logo pokemon.png" alt="">
+            </div>
+            <nav class="nav">
+              <a href="#pokedex">Pokedex</a>
+              <a href="#tipos">Tipos</a>
+              <a href="#topDiez">Top 10</a>
+            </nav>
         </div>
-       
-        <div class="navegador">
-          <a href="../src/pokedex.html" id="tituloCaracteristicas">Pokédex</a> 
-         
-         </div>
-      </nav>
-    </header>
-
-
-    <main class="container">
-        <h1>Bienvenido a Pokemon Go</h1>
-        <button id="informacion">Ver más</button>
-
-    </main>
+      </header>
+     <section class="container" id="pokedex">Aqui va todo lo de pokedex</section>
+     <section class="container" id="tipos">Aqui va todos los tipos de pokemon</section>
+     <section class="container" id="topDiez">Aqui va los top de aparicion</section>
    
-    <footer class="container">
+    <footer class="footer">
       <div class="img-footer">
         <img  id="Whatsapp" src="../src/imagenes/Whatsapp.jpg"  alt="">
         <img  id="facebook" src="../src/imagenes/facebook.jpg"  alt="">
@@ -36,6 +32,11 @@
         <h3>by Susan Saenz & Carol Marulanda</h3>
       </div>
     </footer>
+    </div>
+
+   
+
+   
 
     <div id="root"></div>
     <script src="main.js" type="module"></script>

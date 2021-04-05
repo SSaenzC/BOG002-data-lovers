@@ -1,7 +1,8 @@
 // estas funciones son de ejemplo
 
-export const example = () => {
-  return 'example';
+export let personajes = data.pokemon;
+
+  console.log;
 };
 
 export const anotherExample = () => {

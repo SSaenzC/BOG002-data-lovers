@@ -10,6 +10,7 @@ for(let i = 0; i < personajes.length; i++){
     let nombrePersonajes = personajes[i].name;
     let numeroPersonaje = personajes[i].num;
     let imagenPersonajes = personajes[i].img;
+   
 
    let contenedorpersonajes = document.getElementById("pokemons");
 
@@ -17,6 +18,7 @@ for(let i = 0; i < personajes.length; i++){
    let nuevaImagen = document.createElement("img");
    let nuevoNombre = document.createElement("h1");
    let nuevoNum = document.createElement("h2")
+  
 
    nuevoElemento.className = "tarjeta";
 
@@ -24,9 +26,11 @@ for(let i = 0; i < personajes.length; i++){
    nuevoNombre.innerHTML=personajes[i].name;
    nuevoNum.innerHTML=personajes[i].num;
 
+
    nuevoElemento.appendChild(nuevaImagen);
    nuevoElemento.appendChild(nuevoNombre);
    nuevoElemento.appendChild(nuevoNum);
+  
    contenedorpersonajes.appendChild(nuevoElemento);
 
 
