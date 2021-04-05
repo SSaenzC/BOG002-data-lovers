@@ -1,34 +1,32 @@
 *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  body{
-    width:auto;
-    height: auto;
-    font-family: 'Josefin Slab', serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   }
 
-  :root{
-    scroll-behavior: smooth;
-  }
+body{
+  width:auto;
+  height: auto;
+  font-family: 'Josefin Slab', serif;
+}
+
+:root{
+  scroll-behavior: smooth;
+}
  
-  .container{
-    width: 100%;
-    margin: 0;
-   }
+.container{
+  width: 100%;
+  margin: 0;
+}
 
-  
- nav{
-  
-    font-size: 30px;
-    position:relative;
-    top: 0%;
-    height: 30vh;
-    width: 50%;
-    right: 0%;
-    
- }
+nav{
+  font-size: 30px;
+  position:relative;
+  top: 0;
+  height: 30vh;
+  width: 50%;
+  right: 0%;
+}
 
  .navegador {
    width: 50%;
@@ -173,6 +171,43 @@
     box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, .2);
     grid-template-columns: auto;
   }
+
+  /*modal*/
+.modal{
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
 
  /* .contenedor{
     display: flex;

@@ -1,40 +1,38 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
   <head>
     <meta charset="utf-8">
     <title>Data Lovers</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-
     <header>
+      <div class="logoimg">
+        <img id="logoimg" src="..//src/imagenes/logopokemon.png" alt="logo pokémon">
+      </div>
       <nav class="container">
-        <div class="logoimg">
-          <img id="logoimg" src="..//src/imagenes/logo pokemon.png" alt="">
-        </div>
-        <div class="navegador">
-          <a href="../src/pokedex.html" id="tituloCaracteristicas">Pokédex</a> 
-        </div>
-      </nav>
+        <a href="#" id="homeNav" onclick="display('home','pokedex')">Home</a> 
+        <a href="pokedex.html" id="pokedexNav">Pokédex</a>
+      </nav> 
     </header>
-
-
-    <main class="container">
+    <main>
+      <div id="home" class="page">
         <h1>Bienvenido a Pokemon Go</h1>
         <button id="informacion">Ver más</button>
-
+      </div>
+      <div id="pokedex" class="page">
+        <!--<h2>hola mundo</h2>-->
+      </div>
     </main>
-   
     <footer class="container">
       <div class="img-footer">
-        <img  id="Whatsapp" src="../src/imagenes/Whatsapp.jpg"  alt="">
-        <img  id="facebook" src="../src/imagenes/facebook.jpg"  alt="">
-        <img  id="instagram" src="../src/imagenes/instagram.jpg" alt="">
-        <img  id="twitter" src="../src/imagenes/twitter.jpg"   alt="">
-        <h3>by Susan Saenz & Carol Marulanda</h3>
+        <img  id="Whatsapp" src="../src/imagenes/Whatsapp.jpg"  alt="logo Whatsapp">
+        <img  id="facebook" src="../src/imagenes/facebook.jpg"  alt="logo facebook">
+        <img  id="instagram" src="../src/imagenes/instagram.jpg" alt="logo instagram">
+        <img  id="twitter" src="../src/imagenes/twitter.jpg"   alt="logo twitter">
+        <h3>By Carol Marulanda & Susan Saenz</h3>
       </div>
     </footer>
-
     <div id="root"></div>
     <script src="main.js" type="module"></script>
   </body>
