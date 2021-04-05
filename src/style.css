@@ -3,48 +3,44 @@
     padding: 0;
     box-sizing: border-box;
   }
-  body{
-    width:auto;
-    height: auto;
-    font-family: 'Josefin Slab', serif;
-  }
 
-  :root{
-    scroll-behavior: smooth;
-  }
- 
-  .container{
-    width: 100%;
-    margin: 0;
-   }
+body{
+  width:auto;
+  height: auto;
+  font-family: 'Josefin Slab', serif;
+}
 
-  
- nav{
-  
-    font-size: 30px;
-    position:relative;
-    top: 0%;
-    height: 30vh;
-    width: 50%;
-    right: 0%;
-    
- }
+:root{
+  scroll-behavior: smooth;
+}
 
- .navegador {
-   width: 50%;
-  
-   font-size: 30px;
-   top: 0%;
-   float: right;
-   clear: right;
-   bottom: 30%;
-   padding: 60px 0;
+.container{
+  width: 100%;
+  margin: 0;
+}
+
+nav{
+  font-size: 30px;
+  position:relative;
+  top: 0%;
+  height: 30vh;
+  width: 50%;
+  right: 0%;
+}
+
+.navegador {
+  width: 50%;
+  font-size: 30px;
+  top: 0%;
+  float: right;
+  clear: right;
+  bottom: 30%;
+  padding: 60px 0;
 }
 
 .logoimg{
   width: 50%;
   height: 30vh;
-  
   font-size: 30px;
   top: 0%;
   float: left;
@@ -55,11 +51,9 @@
   width: 50%;
   height: 28vh;
   top: 0%;
- 
-  
 }
  
-  main{
+main{
   width: 100%;
   height: 80vh;
   font: 50%;
@@ -69,105 +63,61 @@
   background-position: center;
   background-attachment: fixed;
   text-align: center;
-  }
+}
 
- main h1{
-    padding: 0;
-    font-size: 100px;
-    
-    position: center;
-    top: 50%;
-    left: 50%;
-    color:white ;
+h1{
+  padding: 0;
+  font-size: 100px;
+  position: center;
+  top: 50%;
+  left: 50%;
+  color:white ;
  }
 
- section{
+section{
   width: 100%;
   height: auto;
-  
-
- }
-
-
-  
- 
-
- .imagen{
-   width: 20%;
-   height: 70%;
-
- }
-
- #imagen{
-   padding:10% ;
-   width: 40vh;
-   height: 100px;
-   flex-direction: center;
-   top: 50%;
- }
-  
+}
 .img-footer {
-    width: 100%;
-    height:80vh;
-    display: inline-flex;
-    flex-direction: wrap;
-    justify-content:center;
-    align-items: center;
-    
-    }
-   
-    #Whatsapp{
-        width: 10%;        text-align: center;
-        display: inline-flex;
-        flex-direction: wrap;
-        justify-content: center;
-        align-items: center;
-    }
-  
-    #facebook{
-        width: 10%;
-        text-align: center;
-        display: inline-flex;
-        flex-direction: wrap;
-        justify-content: center;
-        align-items: center;
-  
-    }
-  
-    #instagram{
-        width: 10%;
-        text-align: center;
-        display: inline-flex;
-        flex-direction: wrap;
-        justify-content: center;
-        align-items: center;
-    }
-  
-    #twitter{
-        width: 10%;
-        text-align: center;
-        display: inline-flex;
-        flex-direction: wrap;
-        justify-content: center;
-        align-items: center;
-    }
-  
-<<<<<<< HEAD
-    /*pokédex*/
+  width: 100%;
+  height:80vh;
+  display: inline-flex;
+  flex-direction: wrap;
+  justify-content:center;
+  align-items: center;
+  }
 
-    .card{
-      background-color: lightcoral;
-      width: 100%;
-    }
+#Whatsapp{
+  width: 10%;        
+  }
+  
+#facebook{
+  width: 10%;
+}
+  
+#instagram{
+  width: 10%;
+}
 
-    #imgpokedex{
-      width: 20%;
-      height: 30vh;
-    }
-
-
-=======
+#twitter{
+  width: 10%;
+}
+  
   /*pokedex.html*/
+  .contenedor{
+  width: 100%;
+  height: auto;
+  background-color:pink;
+}
+
+.tarjeta{
+  display: inline-grid;
+  width: 20%;
+  background-color: pink;
+  box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, .2);
+  grid-template-columns: auto;
+  align-items: center
+}
 
  /* .contenedor{
     display: flex;
@@ -178,7 +128,13 @@
     font-family: sans-serif, Arial, Helvetica, sans-serif;
     padding: 0 20px ;
   }
-
+  #imagen{
+   padding:10% ;
+   width: 40vh;
+   height: 100px;
+   flex-direction: center;
+   top: 50%;
+  }
   .tarjeta{
     display: grid;
     width: 600px;
@@ -239,7 +195,6 @@
     margin: 20px 30px;
     
   }
->>>>>>> d74184400fd3beca01cf0a77e24fad7cdb1f2094
 
 
 
@@ -259,6 +214,33 @@
      background: transparent;
    }
  }
+ .imagen{
+
+    width: 50%;
+    background-color: cyan;
+    margin: 0px 50px 75px 100px;
+  }
+  */
+
+ /*.contenedor{
+  position: flex;
+  top: 30px;
+  right: 280px;
+  background-color: blue;
+  width: 200px;
+  height: 100px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  grid-gap: 20px;
+  justify-content: space-between;
+  width: 320px;
+  padding: 20px;
+  border: 1px solid red
+ }
+ .imagen{
+   width: 20%;
+   height: 70%;
+  }*/
 
 
     
