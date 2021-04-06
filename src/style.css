@@ -1,7 +1,7 @@
 *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   }
 
 body{
@@ -13,16 +13,15 @@ body{
 :root{
   scroll-behavior: smooth;
 }
-
+ 
 .container{
   width: 100%;
   margin: 0;
 }
-
 nav{
   font-size: 30px;
   position:relative;
-  top: 0%;
+  top: 0;
   height: 30vh;
   width: 50%;
   right: 0%;
@@ -52,7 +51,7 @@ nav{
   height: 28vh;
   top: 0%;
 }
- 
+
 main{
   width: 100%;
   height: 80vh;
@@ -63,6 +62,7 @@ main{
   background-position: center;
   background-attachment: fixed;
   text-align: center;
+
 }
 
 h1{
@@ -74,49 +74,82 @@ h1{
   color:white ;
  }
 
-section{
-  width: 100%;
-  height: auto;
+.imagen{
+  width: 20%;
+  height: 70%;
 }
-.img-footer {
+
+#imagen{
+  padding:10% ;
+  width: 40vh;
+  height: 100px;
+  flex-direction: center;
+  top: 50%;
+}
+  
+.img-footer{
   width: 100%;
   height:80vh;
   display: inline-flex;
   flex-direction: wrap;
   justify-content:center;
   align-items: center;
-  }
-
-#Whatsapp{
-  width: 10%;        
-  }
-  
-#facebook{
-  width: 10%;
 }
-  
-#instagram{
+
+.redSocial{
   width: 10%;
 }
 
-#twitter{
-  width: 10%;
-}
-  
-  /*pokedex.html*/
-  .contenedor{
+/*pokedex.html*/
+.contenedor{
   width: 100%;
   height: auto;
-  background-color:pink;
+  background-color:crimson;
 }
 
 .tarjeta{
-  display: inline-grid;
-  width: 20%;
-  background-color: pink;
-  box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, .2);
-  grid-template-columns: auto;
-  align-items: center
+    display: inline-grid;
+    width: 30%;
+    background-color: pink;
+    box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, .2);
+    grid-template-columns: auto;
+  }
+
+  /*modal*/
+.modal{
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: white /* Black w/ opacity */
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
 }
 
  /* .contenedor{
@@ -128,13 +161,7 @@ section{
     font-family: sans-serif, Arial, Helvetica, sans-serif;
     padding: 0 20px ;
   }
-  #imagen{
-   padding:10% ;
-   width: 40vh;
-   height: 100px;
-   flex-direction: center;
-   top: 50%;
-  }
+
   .tarjeta{
     display: grid;
     width: 600px;
@@ -213,14 +240,7 @@ section{
      padding: 5px 20px 20px 20px;
      background: transparent;
    }
- }
- .imagen{
-
-    width: 50%;
-    background-color: cyan;
-    margin: 0px 50px 75px 100px;
-  }
-  */
+ }*/
 
  /*.contenedor{
   position: flex;
@@ -237,10 +257,52 @@ section{
   padding: 20px;
   border: 1px solid red
  }
- .imagen{
-   width: 20%;
-   height: 70%;
-  }*/
+ section{
+  width: 100%;
+  height: auto;
+}
+#Whatsapp{
+  width: 10%;        text-align: center;
+        display: inline-flex;
+        flex-direction: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+  
+    #facebook{
+        width: 10%;
+        text-align: center;
+        display: inline-flex;
+        flex-direction: wrap;
+        justify-content: center;
+        align-items: center;
+  
+    }
+  
+    #instagram{
+        width: 10%;
+        text-align: center;
+        display: inline-flex;
+        flex-direction: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+  
+    #twitter{
+        width: 10%;
+        text-align: center;
+        display: inline-flex;
+        flex-direction: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+.imagen{
+
+    width: 50%;
+    background-color: cyan;
+    margin: 0px 50px 75px 100px;
+  } 
+*/
 
 
     
