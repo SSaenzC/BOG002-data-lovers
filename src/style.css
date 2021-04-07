@@ -187,11 +187,11 @@ text-decoration: none;
     align-items: center;
     box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, .2);
     grid-template-columns: auto;
-    
+    justify-content: center;
     
     height: 40vh;
     background-color: rgb(210, 225, 226);
-    
+    border-radius: 2px;
    
     margin: 0px 20px 20px 0px;
     border-style: hidden;
