@@ -13,96 +13,111 @@ body{
 :root{
   scroll-behavior: smooth;
 }
- 
-.container{
+
+header{
   width: 100%;
+  background: #4e94ab;
+}
+
+#btn-menu{
+  display: none;
+}
+
+header label{
+  display: none;
+  width: 30px;
+  height: 30px;
+  padding: 10px;
+  border-right: 1px solid #fff;
+}
+
+header label:hover{
+  cursor: pointer;
+  background: rgb(0, 0, 0, 0.3);
+}
+
+.menu ul{
   margin: 0;
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: flex-end;
+
 }
 
-nav{
-  font-size: 30px;
-  position:relative;
-  top: 0;
-  height: 30vh;
-  width: 50%;
-  right: 0%;
+.menu li{
+ border-right: 1px solid #fff ;
 }
 
- .navegador {
-   width: 50%;
+.menu li:hover{
+  background: rgb(0, 0, 0, 0.3);
+}
+
+.menu li a {
+display: block;
+padding: 15px 30px;
+color: #fff;
+text-decoration: none;
+
+}
+
+.logo{
   
-   font-size: 30px;
-   top: 0%;
-   float: right;
-   clear: right;
-   bottom: 30%;
-   padding: 60px 0;
+  width: 30%;
+  margin: 0;
+  display:flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.logoimg{
-  width: 50%;
-  height: 30vh;
+.logo img {
+  justify-content: center;
+  width: 30%;
+  height: auto;
+  align-items: center;
   
-  font-size: 30px;
-  top: 0%;
-  float: left;
-  clear: right;
 }
 
-#logoimg{
-  width: 50%;
-  height: 28vh;
-  top: 0%;
- 
+@media (max-width:868px){
   
-}
- 
-  main{
-  width: 100%;
-  height: 80vh;
-  font: 50%;
-  background-image:linear-gradient(to left, hsla(210, 30%, 24%, 0.808), hsla(204, 64%, 44%, 0.575)),url(../src/imagenes/thimo-pedersen-dip9IIwUK6w-unsplash.jpg);
-  background-repeat: no-repeat; 
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  text-align: center;
+  header label{
+    display: block;
   }
 
- main h1{
-    padding: 0;
-    font-size: 100px;
-    
-    position: center;
-    top: 50%;
-    left: 50%;
-    color:white ;
- }
+  .menu {
+    position: absolute;
+    background: #4e94ab;
+    width: 50%;
+    margin-left: -70%;
+    transition: all 0.5s;
+  }
 
- section{
-  width: 100%;
-  height: auto;
+  .menu ul {
+    flex-direction: column;
+
+  }
+
+  .menu li {
+    border-top: 1px solid #fff;
+  }
+
+  #btn-menu:checked ~ .menu {
+    margin: 0;
+
+  }
+
+  }
+
+ 
   
 
- }
+ 
+
 
 
   
  
 
- .imagen{
-   width: 20%;
-   height: 70%;
-
- }
-
- #imagen{
-   padding:10% ;
-   width: 40vh;
-   height: 100px;
-   flex-direction: center;
-   top: 50%;
- }
   
 .img-footer {
     width: 100%;
@@ -150,27 +165,40 @@ nav{
         align-items: center;
     }
   
-  /*pokedex.html*/
+  
+  
+    /*pokedex.html*/
   .contenedor{
     width: 100%;
     height: auto;
-    background-color:crimson;
+    
     }
 
   .imagen{
-
+    
     width: 50%;
     background-color: cyan;
-    margin: 0px 50px 75px 100px;
+    margin: px 50px 75px 100px;
   }
 
   .tarjeta{
     display: inline-grid;
     width: 30%;
-    background-color: pink;
+    align-items: center;
     box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, .2);
     grid-template-columns: auto;
+    
+    
+    height: 40vh;
+    background-color: rgb(210, 225, 226);
+    
+   
+    margin: 0px 20px 20px 0px;
+    border-style: hidden;
   }
+
+  
+  
 
   /*modal*/
 .modal{
@@ -194,7 +222,7 @@ nav{
   width: 80%; /* Could be more or less, depending on screen size */
 }
 
-/* The Close Button */
+ The Close Button 
 .close {
   color: #aaa;
   float: right;
@@ -206,115 +234,7 @@ nav{
 .close:focus {
   color: black;
   text-decoration: none;
-  cursor: pointer;
-}
+  cursor: pointer; 
+} 
 
- /* .contenedor{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    background:cornflowerblue;
-    font-family: sans-serif, Arial, Helvetica, sans-serif;
-    padding: 0 20px ;
-  }
-
-  .tarjeta{
-    display: grid;
-    width: 600px;
-    height: auto;
-    background-color:#fbfbfb;
-    border-radius: 2px;
-    box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, .2);
-    grid-template-columns: repeat(auto-fit, nimmax(200px, 1fr));
-  }
-
-  .header{
-    border-right: 1px solid #ddd;
-  }
-
-  .header img{
-    border-radius:50% ;
-    box-shadow: 0 0 0 8px rgba(0, 0, 0, .06);
-    margin: 20px 30px;
-    transition: .2s;
-  }
-
-  .datos p{
-    margin: 20px 30px;
-    
-  }
-
-  .datos{
-    background: #fbfbfb;
-
-  }
-
-  .header .datos{
-    padding: 20px;
-    text-align: center;
-  }
-
-  .header a{
-    position: relative;
-    display: block;
-  }
-
-  .header a:hover img{
-    box-shadow: 0 0 0 12px rgba(0, 0, 0, .1);
-
-
-  }
-
-  .header h2{
-    color: #f0522a;
-  }
-
-  .datos{
-    position:flex;
-
-  }
-  
-  .datos p{
-    margin: 20px 30px;
-    
-  }
-
-
-
- @media (max-width:640px){
-   .card-contenedor{
-     display: block;
-     width: 450px;
-   }
-   
-   .header{
-     padding: 20px 20px 5px 20px;
-     border:none
-   }
-
-   .datos{
-     padding: 5px 20px 20px 20px;
-     background: transparent;
-   }
- }*/
-
- /*.contenedor{
-  position: flex;
-  top: 30px;
-  right: 280px;
-  background-color: blue;
-  width: 200px;
-  height: 100px;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
-  grid-gap: 20px;
-  justify-content: space-between;
-  width: 320px;
-  padding: 20px;
-  border: 1px solid red
- }*/
-
-
-    
-  
+ 

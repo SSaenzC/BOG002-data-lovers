@@ -7,21 +7,28 @@
   </head>
   <body>
     <header>
-      <div class="logoimg">
-        <img id="logoimg" src="..//src/imagenes/logopokemon.png" alt="logo pokémon">
-      </div>
-      <nav class="container">
-        <a href="#" id="homeNav" onclick="display('home','pokedex')">Home</a> 
-        <a href="pokedex.html" id="pokedexNav">Pokédex</a>
-      </nav> 
+     <input type="checkbox" id="btn-menu">
+     <label for="btn-menu"><img src="../src/imagenes/imagen menu.jpg" alt=""></label>
+     <div class="logo">
+       <img src="../src/imagenes/logo pokemon.png" alt="">
+     </div>
+     <nav class="menu">
+       <ul>
+         <li><a href="#contenedor">Pokedéx</a></li>
+         <li><a href="#tipos">Tipos</a></li>
+         <li><a href="">Top10</a></li>
+       </ul>
+     </nav>
     </header>
+    <br><br><br>
     <main>
-      <div id="home" class="page">
-        <h1>Bienvenido a Pokemon Go</h1>
-        <button id="informacion">Ver más</button>
-      </div>
-      <div id="pokedex" class="page">
-        <!--<h2>hola mundo</h2>-->
+      <div class="contenedor" id="contenedor"></div>
+     
+
+      <div class="contenedor" id="tipos">
+        <div class="type" id="type">
+
+        </div>
       </div>
     </main>
     <footer class="container">
@@ -33,6 +40,9 @@
         <h3>By Carol Marulanda & Susan Saenz</h3>
       </div>
     </footer>
+
+            
+
     <div id="root"></div>
     <script src="main.js" type="module"></script>
   </body>
