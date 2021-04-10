@@ -28,13 +28,13 @@ function crearTarjetas(datosPersonajes){
       nuevoNombre.innerHTML=personajes[i].name;
       nuevoNum.innerHTML=personajes[i].num;
 
+      nuevoElemento.appendChild(nuevoNum);
       nuevoElemento.appendChild(nuevaImagen);
       nuevoElemento.appendChild(nuevoNombre);
-      nuevoElemento.appendChild(nuevoNum);
       contenedorpersonajes.appendChild(nuevoElemento);
 
       let botonPokemon = document.getElementsByClassName('nombrePokemon');
-      //botonPokemon[i].addEventListener('click', mostrarModal);
+      botonPokemon[i].addEventListener('click', mostrarModal);
       //document.getElementsByTagName('button').addEventListener('click', mostrarModal);
       document.getElementById('myBtn').addEventListener('click', mostrarModal);
   }
@@ -42,7 +42,7 @@ function crearTarjetas(datosPersonajes){
 //Ventana modal
 //document.getElementById('myBtn').addEventListener('click', mostrarModal);
 function mostrarModal(){
-  document.getElementById('myModal').style.display='block';
+  document.getElementById('miModal').style.display='block';
     //for(let i = 0; i< personajes.length; i++){
       // console.log(personaje);
    // }
