@@ -40,17 +40,10 @@ function crearTarjetas(datosPersonajes){
 
       let botonPokemon = document.getElementsByClassName('nombrePokemon');
       botonPokemon[i].addEventListener('click', mostrarModal);
-
-    
-      let tipoPersonajes = personajes[i].type
-
-
-      
-  }
+    }
 }
 
-const tarjetaPrincipal = personajes.map(({name, num}) => `${num} ${name}`);
-console.log(tarjetaPrincipal);
+
 
 //Ventana modal
 function mostrarModal(){
@@ -60,7 +53,7 @@ function mostrarModal(){
 //cerrar ventana modal
 document.getElementById('cerrar').addEventListener('click', cerrarModal);
 function cerrarModal(){
-  document.getElementById('miModal').style.display ='none';s
+  document.getElementById('miModal').style.display ='none';
 }
 
 // Get the button that opens the modal
@@ -70,5 +63,8 @@ function cerrarModal(){
 //var span = document.getElementsByClassName("close")[0];
 
 /*const tarjetaPrincipal = personajes.map(({num, name,}) => `${num} ${name}`);
-console.log(tarjetaPrincipal);*/
+console.log(tarjetaPrincipal);
+const tarjetaPrincipal = personajes.map(({name, num}) => `${num} ${name}`);
+console.log(tarjetaPrincipal);
+*/
 
