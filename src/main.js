@@ -9,10 +9,10 @@ let personajes = data.pokemon;
 
 function crearTarjetas(datosPersonajes){ 
   for(let i = 0; i < personajes.length; i++){
-      let nombrePersonajes = personajes[i].name;
+      /*let nombrePersonajes = personajes[i].name;
       let numeroPersonaje = personajes[i].num;
       let imagenPersonajes = personajes[i].img;
-      let acercaPersonajes = personajes[i].about;
+      let acercaPersonajes = personajes[i].about;*/
 
       let contenedorpersonajes = document.getElementById("contenedor");
 
@@ -24,6 +24,7 @@ function crearTarjetas(datosPersonajes){
       
 
       nuevoElemento.className = 'tarjeta';
+      nuevoNombre.id = personajes[i].num;
       nuevoNombre.className = 'nombrePokemon';
       
       
@@ -44,23 +45,31 @@ function crearTarjetas(datosPersonajes){
 }
 
 
-
 //Ventana modal
-function mostrarModal(){
-  document.getElementById('miModal').style.display='block';
+function mostrarModal(event){
+  const perfilPokemon = event.currentTarget.id;
+  const encontrandoPokemon = personajes.find(elemento => elemento.num == perfilPokemon);
+  const cajitaPokemon = document.createElement('div');
+  const tipoPokemon = document.createElement('div');
+
+  cajitaPokemon.id = 'modalDePokemon';
+  cajitaPokemon.innerHTML = encontrandoPokemon.num;
+  
+  console.log(encontrandoPokemon);
+  let modal = document.getElementById('miModal');
+  modal.style.display='block';
+  
+  modal.appendChild(cajitaPokemon);
 }
 
 //cerrar ventana modal
 document.getElementById('cerrar').addEventListener('click', cerrarModal);
 function cerrarModal(){
-  document.getElementById('miModal').style.display ='none';
+  const modal = document.getElementById("miModal");
+  const cajitaPokemon = document.getElementById("modalDePokemon");
+  modal.removeChild(cajitaPokemon);
+  modal.style.display ='none';
 }
-
-// Get the button that opens the modal
-//var btn = document.getElementById("myBtn");
-
-// Get the <span> element that closes the modal
-//var span = document.getElementsByClassName("close")[0];
 
 /*const tarjetaPrincipal = personajes.map(({num, name,}) => `${num} ${name}`);
 console.log(tarjetaPrincipal);
