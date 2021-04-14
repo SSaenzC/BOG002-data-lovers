@@ -8,8 +8,12 @@ export const anotherExample = () => {
   return 'OMG';
 };*/
 
-export const filtrarTipo = (name, Pokemons) => {
-    return Pokemons.filter(Pokemon => Pokemon.name === name);
-  }
-  
-  //console.log(filterType);
+export const filtrarNombre = (name, Pokemons) => {
+  return Pokemons.filter(Pokemon => Pokemon.name === name);
+}
+
+export const filtrarTipo = (tipo, Pokemons) => {
+return Pokemons.filter (pokemon => pokemon.type === type);
+}
+
+//console.log(filterType);

@@ -1,4 +1,4 @@
-import { filtrarTipo } from './data.js';
+import { filtrarNombre } from './data.js';
 // import data from './data/lol/lol.js';
 import data from './data/pokemon/pokemon.js';
 // import data from './data/rickandmorty/rickandmorty.js';
@@ -92,7 +92,7 @@ barraDeBusquedaInput.addEventListener('keyup', realizarBusqueda);
 function realizarBusqueda(){
   let valorIngresado = barraDeBusquedaInput.value;
   console.log(valorIngresado);
-  let resultadoFiltro = filtrarTipo (valorIngresado, personajes);
+  let resultadoFiltro = filtrarNombre (valorIngresado, personajes);
   crearTarjetas(resultadoFiltro);
 }
 
