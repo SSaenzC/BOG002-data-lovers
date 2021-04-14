@@ -98,6 +98,7 @@ header label:hover{
 .contenedor{
   width: 100%;
   height: auto;
+  margin:20px 20px 20px 50px;
 }
 
 .imagen{
@@ -108,32 +109,44 @@ header label:hover{
 
 .tarjeta{
     display: inline-grid;
-    width: 30%;
+    width: 25%;
+    justify-content: center;
     align-items:center;
     box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, .2);
     grid-template-columns: auto;
     height: 40vh;
     background-color: rgb(210, 255,226);
-    margin: 0px 20px 20px 0px;
+    margin: 0px 20px 20px 50px;
     border-style: hidden;
+    border-radius: radius;
+
   }
 
   /*modal*/
 .modal{
-  display: none; /* Hidden by default */
+  display: flex; /* Hidden by default */
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  transition: transform 1s;
+  transform: translateY(0%);
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
   left: 0;
   top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
+  width: 25%; /* Full width */
+  height: 60%; /* Full height */
   overflow: auto; /* Enable scroll if needed */
   background-color: rgb(0,0,0); /* Fallback color */
-  background-color: white /* Black w/ opacity */
+  background-color: rgb(198, 251, 255); /* Black w/ opacity */
+  
+
+  
 }
 
+
 .modal-content {
-  background-color: #fefefe;
+  background-color: black;
   margin: 15% auto; /* 15% from the top and centered */
   padding: 20px;
   border: 1px solid #888;
