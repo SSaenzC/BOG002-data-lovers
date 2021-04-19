@@ -16,7 +16,17 @@ body{
 
 header{
   width: 100%;
-  background: #4e94ab;
+  height: 40vh;
+ 
+  background-image:linear-gradient(to left, hsla(204, 64%, 44%, 0.575), hsl(141, 100%, 91%)),url(../src/imagenes/LogoU.png);
+  background-repeat: no-repeat; 
+  
+  background-position: center;
+ 
+ text-align: center;
+  margin: 0;
+  padding: 0;
+  border-radius: 20px;
 }
 
 #btn-menu{
@@ -58,6 +68,82 @@ header label:hover{
   color: white;
   text-decoration: none;
 }
+/*buscadores*/
+.contenedorDeBusquedas {
+  width: 100%;
+  height: 20vh;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+}
+
+/*.containerBusqueda {
+	background: #fff;
+	width: 30%;
+ 
+	box-shadow: 0px 0px 0px rgba(0, 0, 0, .16);
+	border-radius: 10px;
+	cursor: pointer;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: .2s ease all;
+	margin-bottom: 30px;
+	padding: 10px;
+	position: relative;
+	z-index: 200;
+	border: 2px solid transparent;
+  margin: 1%;
+  
+}
+
+.containerBusqueda.active,
+.containerBusqueda:hover {
+	box-shadow: 0px 5px 10px rgba(0, 0, 0, .16);
+	border: 2px solid hsl(141, 100%, 91%);
+}
+
+.containerBusqueda i {
+	font-size: 30px;
+	margin-left: 30px;
+	color: #4e94ab;
+}
+
+.containerBusqueda.active:before {
+	content: "";
+	display: block;
+	height: 0;
+	width: 0;
+	border-top: 15px solid rgb(210, 255,226);
+	border-right: 15px solid transparent;
+	border-bottom: 15px solid transparent;
+	border-left: 15px solid transparent;
+	position: absolute;
+	bottom: -30px;
+	left: calc(50% - 15px);
+}
+
+#filtrarBusqueda, #filtrarTipo{
+  background: #fff;
+  width: 100%;
+  justify-content: center;
+  display: flex;
+  border: 2px solid transparent;
+  font-family:  'Josefin Slab', serif;
+  font-size: 20px;
+  
+}
+
+input[type=text] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 3px solid rgb(210, 255,226);
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: none;*/
+}
 
 @media(max-width:868px){
   header label{
@@ -65,12 +151,12 @@ header label:hover{
   }
   .menu{
     position: absolute;
-    background: #4e94ab;
+    background: rgb(156, 211, 236);
     width: 50%;
     margin-left: -70%;
     transition: all 0.5s;
   }
-  .menu ul{
+  .menu ul  {
     flex-direction: column;
   }
   .menu li{
@@ -79,6 +165,8 @@ header label:hover{
   #btn-menu:checked ~ .menu{
     margin: 0;
   }
+
+
 }
 
 .img-footer{
@@ -117,7 +205,7 @@ header label:hover{
     background-color: rgb(210, 255,226);
     margin: 0px 20px 20px 50px;
     border-style: hidden;
-    border-radius: radius;
+    
 
   }
 
@@ -132,8 +220,8 @@ header label:hover{
   z-index: 1; /* Sit on top */
   left: 0;
   top: 0;
-  width: 25%; /* Full width */
-  height: 60%; /* Full height */
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
   overflow: auto; /* Enable scroll if needed */
   background-color: rgb(198, 251, 255); /* Black w/ opacity */
   

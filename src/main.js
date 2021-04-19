@@ -1,82 +1,42 @@
-import { filtrarNombre, filtrarTipo } from './data.js';
+import { filtrarNombre } from './data.js';
 // import data from './data/lol/lol.js';
 import data from './data/pokemon/pokemon.js';
 // import data from './data/rickandmorty/rickandmorty.js';
 
 let personajes = data.pokemon;
 
-  function crearTarjetas(personajes){ 
+function crearTarjetas(personajes){ 
   let contenedorpersonajes = document.getElementById("contenedor");
   contenedorpersonajes.innerHTML = '';
   for(let i = 0; i < personajes.length; i++){
-      /*let nombrePersonajes = personajes[i].name;
-      let numeroPersonaje = personajes[i].num;
-      let imagenPersonajes = personajes[i].img;
-      let acercaPersonajes = personajes[i].about;*/
+    /*let nombrePersonajes = personajes[i].name;
+    let numeroPersonaje = personajes[i].num;
+    let imagenPersonajes = personajes[i].img;
+    let acercaPersonajes = personajes[i].about;*/
 
-      
+    let nuevoElemento = document.createElement('div'); //Se crean los elementos que van a contener la tarjeta del pokemon
+    let nuevaImagen = document.createElement('img');
+    let nuevoNombre = document.createElement('button');
+    let nuevoNum = document.createElement('p');
+     
+    nuevoElemento.className = 'tarjeta';
+    nuevoNombre.id = personajes[i].num;
+    nuevoNombre.className = 'nombrePokemon';
+    
+    nuevaImagen.src = personajes[i].img;
+    nuevoNombre.innerHTML = personajes[i].name;
+    nuevoNum.innerHTML = personajes[i].num;
+    
+    nuevoElemento.appendChild(nuevoNum);
+    nuevoElemento.appendChild(nuevaImagen);
+    nuevoElemento.appendChild(nuevoNombre);
+    contenedorpersonajes.appendChild(nuevoElemento);
 
-      let nuevoElemento = document.createElement('div');
-      let nuevaImagen = document.createElement('img');
-      let nuevoNombre = document.createElement('button');
-      let nuevoNum = document.createElement('p');
-      
-      nuevoElemento.className = 'tarjeta';
-      nuevoNombre.id = personajes[i].num;
-      nuevoNombre.className = 'nombrePokemon';
-      
-      
-      nuevaImagen.src = personajes[i].img;
-      nuevoNombre.innerHTML = personajes[i].name;
-      nuevoNum.innerHTML = personajes[i].num;
-      
-
-      nuevoElemento.appendChild(nuevoNum);
-      nuevoElemento.appendChild(nuevaImagen);
-      nuevoElemento.appendChild(nuevoNombre);
-      contenedorpersonajes.appendChild(nuevoElemento);
-
-      let botonPokemon = document.getElementsByClassName('nombrePokemon');
-      botonPokemon[i].addEventListener('click', mostrarModal);
-    }
-}
-//document.getElementById('contenedor').style.display='block';
-crearTarjetas(personajes);
-
-const contenedorTipos = document.getElementById("tipos");
-const listaTipos = []
-
-for(let i = 0; i < personajes.length; i++){
- const miniListaTipos = personajes[i].type
-  for (let j =0; j< miniListaTipos.length; j++ ){
-    const soloUnTipo = miniListaTipos[j];
-      if (!listaTipos.includes(soloUnTipo)){
-        listaTipos.push(soloUnTipo);
-      }
-   
-    // console.log(miniListaTipos[j]); 
+    let botonPokemon = document.getElementsByClassName('nombrePokemon');
+    botonPokemon[i].addEventListener('click', mostrarModal);
   }
-
- // console.log(personajes[i].type);
 }
-
-console.log(listaTipos);
-
-/*for(let i = 0; i < personajes.length; i++){
-
-
-const nuevoElementoTipos = document.createElement("div");
-const nuevoTipos = document.createElement("h2");
-
-nuevoElementoTipos.className = "tiposPokemon"
-
-nuevoTipos.innerHTML = personajes[i].type;
-
-nuevoElementoTipos.appendChild(nuevoTipos);
-contenedorTipos.appendChild(nuevoElementoTipos);
-}*/
-
-
+crearTarjetas(personajes);
 
 //Ventana modal
 function mostrarModal(event){
@@ -122,6 +82,7 @@ function cerrarModal(){
   modal.style.display ='none';
 }
 
+//barra de busqueda
 const barraDeBusquedaInput = document.getElementById('filtrarBusqueda');
 barraDeBusquedaInput.addEventListener('keyup', realizarBusqueda);
 function realizarBusqueda(){
@@ -131,8 +92,88 @@ function realizarBusqueda(){
   crearTarjetas(resultadoFiltro);
 }
 
+//Esta función nos trae los tipos de pokemon
+function traerListaTipos (){
+  const listaTipos =[];
+  for(let i = 0; i < personajes.length; i++){
+    const arrayListaTipos = personajes[i].type
+    for (let j =0; j<  arrayListaTipos.length; j++ ){
+      const tiposPokemon =  arrayListaTipos[j];
+      if (!listaTipos.includes(tiposPokemon)){
+        listaTipos.push(tiposPokemon);
+      }
+    } 
+  }
+  //console.log(listaTipos); //
+  return listaTipos;
+}
+
+//esta función le da la funcionalidad al boton tipos
+document.getElementById('tiposBanner').addEventListener('click', selectTiposPokemon);
+function selectTiposPokemon(){
+  document.getElementById("contenedor").style.display= "none";
+  const contenedorTipos = document.getElementById('tipos');
+  const selectTipos = document.createElement('select');
+  
+  
+  const arrayTipos = traerListaTipos();
+  console.log(arrayTipos);
+  for(let i = 0; i<arrayTipos.length; i++){
+    const opcionesTiposPokemon = document.createElement('option');
+    opcionesTiposPokemon.innerHTML = arrayTipos[i];
+    selectTipos.appendChild(opcionesTiposPokemon);
+    contenedorTipos.appendChild(selectTipos);
+    opcionesTipoPokemon.value = arrayTipos[i];
+    opcionesTipoPokemon.addEventListener('change', mostrarValorTipos);
+    
+  }
+}
+function mostrarValorTipos(event){
+  const valorTipo = event.currentTarget.value;
+   console.log(valorTipo);
+
+}
 
 
+
+
+
+
+//busqueda por tipos
+/*
+function listaDeTipos(){
+  selectTipos.id = 'miSelect';
+  // colocando el select en el div que destine en el html
+  for(let i = 0; i < personajes.length; i++){
+    const miniListaTipos = personajes[i].type
+    for (let j =0; j< miniListaTipos.length; j++ ){
+      const soloUnTipo = miniListaTipos[j];
+      if (!listaTipos.includes(soloUnTipo)){*/      
+       
+        /*const nuevaListaTipos = document.createElement('option')
+       // const seleccionadorTipos = nuevaListaTipos.appendChild(document.createTextNode(soloUnTipo));//
+        nuevaListaTipos.innerHTML = soloUnTipo;
+        selectTipos.appendChild(nuevaListaTipos)*/
+        //console.log(nuevaListaTipos);//
+        /*listaTipos.push(soloUnTipo);
+        console.log(listaTipos);
+           for(let k = 0; k<listaTipos.length; k++){
+            const nuevaListaTipos = document.createElement('option')
+            nuevaListaTipos.innerHTML = soloUnTipo;
+            selectTipos.appendChild(nuevaListaTipos)
+          }
+
+      } //document.getElementById('miSelect').appendChild(seleccionadorTipos);//
+    }
+  }*/
+  //document.getElementById('miSelect').appendChild(document.createTextNode(listaTipos));
+  /*var opciones = document.createElement("option");
+  opciones.setAttribute("value", "volvocar");
+  var t = document.createTextNode("Volvo");
+  opciones.appendChild(t);
+  document.getElementById("miSelect").appendChild(z);*/
+ 
+//}
 /*const tarjetaPrincipal = personajes.map(({num, name,}) => `${num} ${name}`);
 console.log(tarjetaPrincipal);
 const tarjetaPrincipal = personajes.map(({name, num}) => `${num} ${name}`);

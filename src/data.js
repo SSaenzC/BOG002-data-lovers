@@ -13,7 +13,7 @@ export const filtrarNombre = (name, Pokemons) => {
 }
 
 export const filtrarTipo = (tipo, Pokemons) => {
-return Pokemons.filter (pokemon => pokemon.type === type);
+return Pokemons.filter (pokemon => pokemon.type.includes(tipo));
 }
 
 
