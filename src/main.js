@@ -1,4 +1,4 @@
-import { filtrarNombre } from './data.js';
+import { filtrarNombre, filtrarTipo } from './data.js';
 // import data from './data/lol/lol.js';
 import data from './data/pokemon/pokemon.js';
 // import data from './data/rickandmorty/rickandmorty.js';
@@ -92,16 +92,79 @@ function realizarBusqueda(){
   crearTarjetas(resultadoFiltro);
 }
 
-//busqueda por tipos
-function traerInfoTipos(){
-  const listaTipos =[];  
+//Esta función nos trae los tipos de pokemon
+function traerListaTipos (){
+  const listaTipos =[];
   for(let i = 0; i < personajes.length; i++){
-    const miniListaTipos = personajes[i].type
-    for (let j =0; j< miniListaTipos.length; j++ ){
-      const soloUnTipo = miniListaTipos[j];
-    }
-  }    
+    const arrayListaTipos = personajes[i].type
+    for (let j =0; j<  arrayListaTipos.length; j++ ){
+      const tiposPokemon =  arrayListaTipos[j];
+      if (!listaTipos.includes(tiposPokemon)){
+        listaTipos.push(tiposPokemon);
+      }
+    } 
+  }
+ // console.log(listaTipos); 
+  return listaTipos;
 }
+
+//esta función le da la funcionalidad al boton tipos
+document.getElementById('tiposBanner').addEventListener('click', selectTiposPokemon);
+function selectTiposPokemon(){
+  document.getElementById("contenedor").style.display= "none";
+  document.getElementById('filtrarBusqueda').style.display="none";
+  const contenedorTipos = document.getElementById('tipos');
+  const selectTipos = document.createElement('select');
+  selectTipos.id ='miSelect';
+  
+  
+  const arrayTipos = traerListaTipos();
+  //console.log(arrayTipos);//
+  for(let i = 0; i<arrayTipos.length; i++){
+    const opcionesTiposPokemon = document.createElement('option');
+    opcionesTiposPokemon.innerHTML = arrayTipos[i];
+    selectTipos.appendChild(opcionesTiposPokemon);
+    contenedorTipos.appendChild(selectTipos);
+    
+    opcionesTiposPokemon.value = arrayTipos[i];
+    
+  }
+  let opcionSeleccionar = document.getElementById('miSelect');
+  opcionSeleccionar.addEventListener('change', mostrarValorTipos);
+}
+
+
+
+// opcionSeleccionar.addEventListener("change", mostrarValorTipos);
+function  mostrarValorTipos(event){
+  console.log(event.target.value);
+  const opcionSeleccionada = event.target.value;
+  let personajesTipo = personajes;
+  const valorTipo = filtrarTipo(opcionSeleccionada,personajesTipo);
+  console.log(valorTipo);
+  //const opcionSeleccionada = opcionSeleccionar.selectedIndex;
+  // let personajesTipo = personajes.type;
+  // const valorTipo = filtrarTipo(opcionSeleccionada,personajesTipo);
+  // console.log(opcionSeleccionada);
+  // crearTarjetas(valorTipo);
+  //console.log(opcionSeleccionada);
+
+
+
+}
+
+//console.log(personajes.type);
+// console.log(mostrarValorTipos());
+//busqueda por tipos
+// function traerInfoTipos(){
+//   const listaTipos =[];  
+//   for(let i = 0; i < personajes.length; i++){
+//     const miniListaTipos = personajes[i].type
+//     for (let j =0; j< miniListaTipos.length; j++ ){
+//       const soloUnTipo = miniListaTipos[j];
+//     }
+//   }    
+// }
 /*document.getElementById('tiposBanner').addEventListener('click', listaDeTipos);
 function listaDeTipos(){
   const contenedorTipos = document.getElementById('tipos');
