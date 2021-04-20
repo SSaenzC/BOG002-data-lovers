@@ -1,4 +1,4 @@
-import { filtrarNombre } from './data.js';
+import { filtrarNombre, filtrarTipo } from './data.js';
 // import data from './data/lol/lol.js';
 import data from './data/pokemon/pokemon.js';
 // import data from './data/rickandmorty/rickandmorty.js';
@@ -49,7 +49,7 @@ function mostrarModal(event){
   const pesoPokemon = document.createElement('p');
   const tipoPokemon = document.createElement('p');
   const debilidadPokemon = document.createElement('p');
-  const evolucionPokemon = document.createElement('p');
+ // const evolucionPokemon = document.createElement('p');//
  
   cajitaPokemon.id = 'modalDePokemon';
   cajitaPokemon.innerHTML = encontrandoPokemon.num;
@@ -104,7 +104,7 @@ function traerListaTipos (){
       }
     } 
   }
-  //console.log(listaTipos); //
+ // console.log(listaTipos); //
   return listaTipos;
 }
 
@@ -112,27 +112,44 @@ function traerListaTipos (){
 document.getElementById('tiposBanner').addEventListener('click', selectTiposPokemon);
 function selectTiposPokemon(){
   document.getElementById("contenedor").style.display= "none";
+  document.getElementById('filtrarBusqueda').style.display="none";
   const contenedorTipos = document.getElementById('tipos');
   const selectTipos = document.createElement('select');
+  selectTipos.id ='miSelect';
   
   
   const arrayTipos = traerListaTipos();
-  console.log(arrayTipos);
+  //console.log(arrayTipos);//
   for(let i = 0; i<arrayTipos.length; i++){
     const opcionesTiposPokemon = document.createElement('option');
     opcionesTiposPokemon.innerHTML = arrayTipos[i];
     selectTipos.appendChild(opcionesTiposPokemon);
     contenedorTipos.appendChild(selectTipos);
-    opcionesTipoPokemon.value = arrayTipos[i];
-    opcionesTipoPokemon.addEventListener('change', mostrarValorTipos);
+    
+    /* opcionesTipoPokemon.value = arrayTipos[i];
+    opcionesTipoPokemon.addEventListener('change', mostrarValorTipos);*/
     
   }
 }
-function mostrarValorTipos(event){
-  const valorTipo = event.currentTarget.value;
-   console.log(valorTipo);
 
-}
+const opcionSeleccionar = document.getElementById('miSelect');
+console.log(opcionSeleccionar);
+// opcionSeleccionar.addEventListener("change", mostrarValorTipos);
+// function  mostrarValorTipos(){
+//   const opcionSeleccionada = opcionSeleccionar.selectedIndex;
+//   let personajesTipo = personajes.type;
+//   const valorTipo = filtrarTipo(opcionSeleccionada,personajesTipo);
+//   console.log(opcionSeleccionada);
+//   crearTarjetas(valorTipo);
+//    console.log(valorTipo);
+
+
+
+// }
+// console.log(mostrarValorTipos());
+
+
+
 
 
 
@@ -180,3 +197,4 @@ const tarjetaPrincipal = personajes.map(({name, num}) => `${num} ${name}`);
 console.log(tarjetaPrincipal);
 console.log(encontrandoPokemon.evolution['prev-evolution'][0]);
 */
+console.log(filtrarNombre, data);
