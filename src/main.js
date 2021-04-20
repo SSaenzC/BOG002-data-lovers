@@ -93,7 +93,16 @@ function realizarBusqueda(){
 }
 
 //busqueda por tipos
-document.getElementById('tiposBanner').addEventListener('click', listaDeTipos);
+function traerInfoTipos(){
+  const listaTipos =[];  
+  for(let i = 0; i < personajes.length; i++){
+    const miniListaTipos = personajes[i].type
+    for (let j =0; j< miniListaTipos.length; j++ ){
+      const soloUnTipo = miniListaTipos[j];
+    }
+  }    
+}
+/*document.getElementById('tiposBanner').addEventListener('click', listaDeTipos);
 function listaDeTipos(){
   const contenedorTipos = document.getElementById('tipos');
   const selectTipos = document.createElement('SELECT');
@@ -114,14 +123,8 @@ function listaDeTipos(){
       }document.getElementById('miSelect').appendChild(seleccionadorTipos);
     }
   }
-  //document.getElementById('miSelect').appendChild(document.createTextNode(listaTipos));
-  /*var opciones = document.createElement("option");
-  opciones.setAttribute("value", "volvocar");
-  var t = document.createTextNode("Volvo");
-  opciones.appendChild(t);
-  document.getElementById("miSelect").appendChild(z);*/
   console.log(listaTipos);
-}
+}*/
 /*const tarjetaPrincipal = personajes.map(({num, name,}) => `${num} ${name}`);
 console.log(tarjetaPrincipal);
 const tarjetaPrincipal = personajes.map(({name, num}) => `${num} ${name}`);
