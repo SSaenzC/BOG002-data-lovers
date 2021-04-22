@@ -18,11 +18,24 @@ export const filtrarTipo = (opcionTipo, pokemons) => {
   return pokemons.filter (pokemon => pokemon.type.includes(opcionTipo));
 }
 
-
-export const organizarEncounter = (arrayEnconter, pokemons) =>{
-  return pokemons.sort (arrayEnconter);
+function compararAparicion (firstItem, secondItem){
+  return secondItem["spawn-chance"] - firstItem["spawn-chance"];
+}
+export const organizarAparicion = (pokemons) =>{
+  return pokemons.sort (compararAparicion);
 }
  
+// const students = [
+//   { name: "Alex",   grade: 15 },
+//   { name: "Devlin", grade: 15 },
+//   { name: "Eagle",  grade: 13 },
+//   { name: "Sam",    grade: 14 },
+// ];
+// function compareGrades(firstItem, secondItem){
+// 	return firstItem.grade - secondItem.grade;}
+// const resultadoOrdenado =students.sort(compareGrades);
+// console.log(resultadoOrdenado);
+
 // export const arrayTop = (encounter, pokemons) => {
 //   return pokemons.map (pokemons => pokemon.encounter== encounter);
 // }

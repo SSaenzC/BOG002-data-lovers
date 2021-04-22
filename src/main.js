@@ -1,9 +1,11 @@
-import { filtrarNombre, filtrarTipo, organizarEncounter} from './data.js';
+import { filtrarNombre, filtrarTipo, organizarAparicion} from './data.js';
 // import data from './data/lol/lol.js';
 import data from './data/pokemon/pokemon.js';
 // import data from './data/rickandmorty/rickandmorty.js';
 
 let personajes = data.pokemon;
+
+console.log(organizarAparicion(personajes));
 
 function crearTarjetas(personajes){ 
   let contenedorpersonajes = document.getElementById("contenedor");
@@ -130,16 +132,16 @@ function  mostrarValorTipos(event){
   crearTarjetas(valorTipo);
 }
 
-document.getElementById('topAparicion').addEventListener('click', frecuenciaAparicion);
-function frecuenciaAparicion(){
-  const arrayEncounter = personajes.map (personajes =>{
-    return personajes["spawn-chance"];
-  })
-  console.log(arrayEncounter);
-  const encuentroOrganizado = organizarEncounter(arrayEncounter, personajes);
-  console.log(encuentroOrganizado);
-  //const aparicionPersonajes = personajes
-}
+
+
+// document.getElementById('topAparicion').addEventListener('click', frecuenciaAparicion);
+// function frecuenciaAparicion(){
+//   const arrayEncounter = personajes["spawn-chance"];
+//   console.log(arrayEncounter);
+//   const encuentroOrganizado = organizarEncounter(arrayEncounter, personajes);
+//  // console.log(encuentroOrganizado);
+//   //const aparicionPersonajes = personajes
+// }
 
 
 /*document.getElementById('tiposBanner').addEventListener('click', listaDeTipos);
