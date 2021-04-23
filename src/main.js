@@ -5,7 +5,7 @@ import data from './data/pokemon/pokemon.js';
 
 let personajes = data.pokemon;
 
-console.log(organizarAparicion(personajes));
+//console.log(organizarAparicion(personajes));
 
 function crearTarjetas(personajes){ 
   let contenedorpersonajes = document.getElementById("contenedor");
@@ -134,8 +134,8 @@ function  mostrarValorTipos(event){
 }
   
 // Crea la tabla del top 10 de aparicion de Pokemon
-document.getElementById('topAparicion').addEventListener('click',genera_tabla );
-function genera_tabla(titulos, objetos) {
+document.getElementById('topAparicion').addEventListener('click', pegaInfo);
+function genera_tabla(titulos, pokemons) {
   // Obtener la referencia del elemento body
   const cuerpo = document.getElementById("topDiez");
   //document.getElementById('contenedor').style.display="none";
@@ -155,11 +155,11 @@ function genera_tabla(titulos, objetos) {
   }
   titulo.appendChild(hilera);
   tabla.appendChild(titulo);
-  for(let j = 0; j < objetos.length; j++){
+  for(let j = 0; j < pokemons.length; j++){
     const hileraCuerpo = document.createElement('tr');
     for(let k = 0; k < titulos.length; k++){
       const celda = document.createElement('td');
-      celda.innerHTML = objetos[j][titulos[k].toLowerCase()];
+      celda.innerHTML = pokemons[j][titulos[k]];
       hileraCuerpo.appendChild(celda);
     }
     tblBody.appendChild(hileraCuerpo);
@@ -168,13 +168,37 @@ function genera_tabla(titulos, objetos) {
   cuerpo.appendChild(tabla);
 }
 
-const titulosTabla = ['ID', 'NAME', 'PLATE'];
-const objects3 = [
-  {"id": "1", 'name': "jetta",  'plate': "DFG-1222"},
-  {"id": "2", 'name': "fusion", 'plate': "DFF-3342"}
-];
+function pegaInfo(){
+  const resultadoOrdenado = organizarAparicion(personajes);
+  const titulosTabla = ['num', 'name', 'spawn-chance'];
+  genera_tabla(titulosTabla, resultadoOrdenado);
+}
 
-genera_tabla(titulosTabla, objects3);
+document.getElementById('debilidad').addEventListener('click', botonesDebilidades);
+function botonesDebilidades(){
+  const contenedorBotones = document.getElementById('listaDebilidades');
+  const tiposPokemon = traerListaTipos();
+  
+  for(let i = 0; i < tiposPokemon.length; i++){
+    const boton = document.createElement('button');
+    const crearBoton = document.createTextNode(tiposPokemon[i]);
+    boton.appendChild(crearBoton);
+    contenedorBotones.appendChild(boton);
+    // crearBoton.innerHTML = document.createTextNode(tiposPokemon[i]);
+    // crearBoton.id = tiposPokemon[i];
+    // console.log(crearBoton);
+  //   crearBoton.appendChild(document.createTextNode('somos botones!')); 
+    
+  }
+  contenedorBotones.appendChild(crearBoton);
+}
+ 
+// const objects3 = [
+//   {"id": "1", 'name': "jetta",  'plate': "DFG-1222"},
+//   {"id": "2", 'name': "fusion", 'plate': "DFF-3342"}
+// ];
+
+// genera_tabla(titulosTabla, objects3);
 
 
 
