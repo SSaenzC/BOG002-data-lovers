@@ -107,6 +107,7 @@ function traerListaTipos (){
 //esta función le da la funcionalidad al boton tipos
 document.getElementById('tiposBanner').addEventListener('click', selectTiposPokemon);
 function selectTiposPokemon(){
+  document.getElementById("topDiez").style.display="none"
   document.getElementById('filtrarBusqueda').style.display="none";
   const contenedorTipos = document.getElementById('tipos');
   const selectTipos = document.createElement('select');
@@ -131,7 +132,63 @@ function  mostrarValorTipos(event){
   console.log(valorTipo);
   crearTarjetas(valorTipo);
 }
+  
+// Crea la tabla del top 10 de aparicion de Pokemon
+document.getElementById('topAparicion').addEventListener('click',genera_tabla );
+function genera_tabla(titulos, objetos) {
+  // Obtener la referencia del elemento body
+  const cuerpo = document.getElementById("topDiez");
+  //document.getElementById('contenedor').style.display="none";
 
+  // Crea un elemento <table> y un elemento <tbody>
+  const tabla   = document.createElement("table");
+  const titulo = document.createElement('thead');
+  const tblBody = document.createElement("tbody");
+
+  // Crea las celdas -> titulos
+  const hilera = document.createElement("tr");
+  for (let i = 0; i < titulos.length; i++) {
+    // Crea las hileras de la tabla
+    const encabezados = document.createElement('th');
+    encabezados.innerHTML = titulos[i];
+    hilera.appendChild(encabezados);
+  }
+  titulo.appendChild(hilera);
+  tabla.appendChild(titulo);
+  for(let j = 0; j < objetos.length; j++){
+    const hileraCuerpo = document.createElement('tr');
+    for(let k = 0; k < titulos.length; k++){
+      const celda = document.createElement('td');
+      celda.innerHTML = objetos[j][titulos[k].toLowerCase()];
+      hileraCuerpo.appendChild(celda);
+    }
+    tblBody.appendChild(hileraCuerpo);
+  }
+  tabla.appendChild(tblBody);
+  cuerpo.appendChild(tabla);
+}
+
+const titulosTabla = ['ID', 'NAME', 'PLATE'];
+const objects3 = [
+  {"id": "1", 'name': "jetta",  'plate': "DFG-1222"},
+  {"id": "2", 'name': "fusion", 'plate': "DFF-3342"}
+];
+
+genera_tabla(titulosTabla, objects3);
+
+
+
+  // var row = footer.insertRow(0);
+  // var cell = row.insertCell(0);
+  // cell.innerHTML = "<b>This is a table footer</b>";
+  // const contenedorTabla = document.getElementById('topDiez');
+  // const tabla = document.createElement('table');
+  // const encabezado = document.createElement('thead');
+  // const cuerpo = document.createElement('tbody');
+
+  // tabla.appendChild(encabezado);
+  // tabla.appendChild(cuerpo);
+  // contenedorTabla.appendChild(tabla);
 
 
 // document.getElementById('topAparicion').addEventListener('click', frecuenciaAparicion);
