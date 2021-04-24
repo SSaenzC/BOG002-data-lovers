@@ -14,6 +14,10 @@ export const filtrarNombre = (name, pokemons) => {
   return pokemons.filter(pokemon => pokemon.name.includes(name));
 }
 
+export const filtrarDebilidad = (debilidad, pokemons) => {
+  return pokemons.filter(pokemon => pokemon.weaknesses.includes(debilidad));
+}
+
 export const filtrarTipo = (opcionTipo, pokemons) => {
   return pokemons.filter (pokemon => pokemon.type.includes(opcionTipo));
 }

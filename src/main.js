@@ -1,4 +1,4 @@
-import { filtrarNombre, filtrarTipo, organizarAparicion} from './data.js';
+import { filtrarNombre, filtrarTipo, organizarAparicion, filtrarDebilidad } from './data.js';
 // import data from './data/lol/lol.js';
 import data from './data/pokemon/pokemon.js';
 // import data from './data/rickandmorty/rickandmorty.js';
@@ -6,6 +6,7 @@ import data from './data/pokemon/pokemon.js';
 let personajes = data.pokemon;
 
 //console.log(organizarAparicion(personajes));
+
 
 function crearTarjetas(personajes){ 
   let contenedorpersonajes = document.getElementById("contenedor");
@@ -174,25 +175,29 @@ function pegaInfo(){
   genera_tabla(titulosTabla, resultadoOrdenado);
 }
 
-document.getElementById('debilidad').addEventListener('click', botonesDebilidades);
+document.getElementById('debilidad').addEventListener('click', eventoBoton);
 function botonesDebilidades(){
   const contenedorBotones = document.getElementById('listaDebilidades');
   const tiposPokemon = traerListaTipos();
   
   for(let i = 0; i < tiposPokemon.length; i++){
     const boton = document.createElement('button');
+   
+    boton.value = tiposPokemon[i];
     const crearBoton = document.createTextNode(tiposPokemon[i]);
     boton.appendChild(crearBoton);
     contenedorBotones.appendChild(boton);
-    // crearBoton.innerHTML = document.createTextNode(tiposPokemon[i]);
-    // crearBoton.id = tiposPokemon[i];
-    // console.log(crearBoton);
-  //   crearBoton.appendChild(document.createTextNode('somos botones!')); 
+    }
     
   }
-  contenedorBotones.appendChild(crearBoton);
+
+function  eventoBoton(event){
+  console.log(event.target.value);
+  // const boSeleccionada = event.target.value;
+  // const valorTipo = filtrarTipo(opcionSeleccionada,personajes);
+  // console.log(valorTipo);
+  // crearTarjetas(valorTipo);
 }
- 
 // const objects3 = [
 //   {"id": "1", 'name': "jetta",  'plate': "DFG-1222"},
 //   {"id": "2", 'name': "fusion", 'plate': "DFF-3342"}
