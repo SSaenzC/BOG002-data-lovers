@@ -14,16 +14,19 @@ export const filtrarNombre = (name, pokemons) => {
 }
 
 export const filtrarTipo = (opcionTipo, pokemons) => {
-  return pokemons.filter (pokemon => pokemon.type.includes(opcionTipo));
-
- /* if(opcionTipo == 0){
-    const tipoGrass = Pokemons.filter (pokemon => pokemon.type.includes("grass"));
-    return tipoGrass
-  }  
-  if(opcionTipo == 1){
-    const tipoPoison = Pokemons.filter (pokemon => pokemon.type == "poison");
-    return tipoPoison
-  }  */
+  return pokemons.filter (pokemon => pokemon.type.includes(opcionTipo))
 }
 
+function compararAparicion (firstItem, secondItem){
+  return secondItem["spawn-chance"] - firstItem["spawn-chance"];
+}
+export const organizarAparicion = (pokemons) =>{
+  return pokemons.sort (compararAparicion);
+}
+
+export const filtrarDebilidad = (debilidad, pokemons) => {
+  return pokemons.filter(pokemon => pokemon.weaknesses.includes(debilidad));
+}
+
+//sortData(data, sortBy, sortOrder)
 

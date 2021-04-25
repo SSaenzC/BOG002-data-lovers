@@ -1,4 +1,4 @@
-import { filtrarNombre, filtrarTipo } from './data.js';
+import { filtrarNombre, filtrarTipo,organizarAparicion,filtrarDebilidad} from './data.js';
 // import data from './data/lol/lol.js';
 import data from './data/pokemon/pokemon.js';
 // import data from './data/rickandmorty/rickandmorty.js';
@@ -9,11 +9,6 @@ function crearTarjetas(personajes){
   let contenedorpersonajes = document.getElementById("contenedor");
   contenedorpersonajes.innerHTML = '';
   for(let i = 0; i < personajes.length; i++){
-    /*let nombrePersonajes = personajes[i].name;
-    let numeroPersonaje = personajes[i].num;
-    let imagenPersonajes = personajes[i].img;
-    let acercaPersonajes = personajes[i].about;*/
-
     let nuevoElemento = document.createElement('div'); //Se crean los elementos que van a contener la tarjeta del pokemon
     let nuevaImagen = document.createElement('img');
     let nuevoNombre = document.createElement('button');
@@ -104,54 +99,108 @@ function traerListaTipos (){
       }
     } 
   }
- // console.log(listaTipos); 
   return listaTipos;
 }
 
 //esta función le da la funcionalidad al boton tipos
 document.getElementById('tiposBanner').addEventListener('click', selectTiposPokemon);
 function selectTiposPokemon(){
-  document.getElementById("contenedor").style.display= "none";
   document.getElementById('filtrarBusqueda').style.display="none";
   const contenedorTipos = document.getElementById('tipos');
   const selectTipos = document.createElement('select');
   selectTipos.id ='miSelect';
-  
-  
   const arrayTipos = traerListaTipos();
-  //console.log(arrayTipos);//
   for(let i = 0; i<arrayTipos.length; i++){
     const opcionesTiposPokemon = document.createElement('option');
     opcionesTiposPokemon.innerHTML = arrayTipos[i];
     selectTipos.appendChild(opcionesTiposPokemon);
     contenedorTipos.appendChild(selectTipos);
-    
     opcionesTiposPokemon.value = arrayTipos[i];
-    
   }
   let opcionSeleccionar = document.getElementById('miSelect');
   opcionSeleccionar.addEventListener('change', mostrarValorTipos);
 }
 
-
-
 // opcionSeleccionar.addEventListener("change", mostrarValorTipos);
 function  mostrarValorTipos(event){
   console.log(event.target.value);
   const opcionSeleccionada = event.target.value;
-  let personajesTipo = personajes;
-  const valorTipo = filtrarTipo(opcionSeleccionada,personajesTipo);
+  const valorTipo = filtrarTipo(opcionSeleccionada,personajes);
   console.log(valorTipo);
-  //const opcionSeleccionada = opcionSeleccionar.selectedIndex;
-  // let personajesTipo = personajes.type;
-  // const valorTipo = filtrarTipo(opcionSeleccionada,personajesTipo);
-  // console.log(opcionSeleccionada);
-  // crearTarjetas(valorTipo);
-  //console.log(opcionSeleccionada);
-
-
-
+  crearTarjetas(valorTipo);
 }
+
+// Crea la tabla del top 10 de aparicion de Pokemon
+document.getElementById('topAparicion').addEventListener('click', pegaInfo);
+function genera_tabla(titulos, pokemons) {
+  // Obtener la referencia del elemento body
+  const cuerpo = document.getElementById("topDiez");
+  //document.getElementById('contenedor').style.display="none";
+
+  // Crea un elemento <table> y un elemento <tbody>
+  const tabla   = document.createElement("table");
+  const titulo = document.createElement('thead');
+  const tblBody = document.createElement("tbody");
+
+  // Crea las celdas -> titulos
+  const hilera = document.createElement("tr");
+  for (let i = 0; i < titulos.length; i++) {
+    // Crea las hileras de la tabla
+    const encabezados = document.createElement('th');
+    encabezados.innerHTML = titulos[i];
+    hilera.appendChild(encabezados);
+  }
+  titulo.appendChild(hilera);
+  tabla.appendChild(titulo);
+  for(let j = 0; j < pokemons.length; j++){
+    const hileraCuerpo = document.createElement('tr');
+    for(let k = 0; k < titulos.length; k++){
+      const celda = document.createElement('td');
+      celda.innerHTML = pokemons[j][titulos[k]];
+      hileraCuerpo.appendChild(celda);
+    }
+    tblBody.appendChild(hileraCuerpo);
+  }
+  tabla.appendChild(tblBody);
+  cuerpo.appendChild(tabla);
+}
+
+function pegaInfo(){
+  const resultadoOrdenado = organizarAparicion(personajes);
+  const titulosTabla = ['num', 'name', 'spawn-chance'];
+  genera_tabla(titulosTabla, resultadoOrdenado);
+}
+
+document.getElementById('debilidad').addEventListener('click', eventoBoton);
+function botonesDebilidades(){
+  const contenedorBotones = document.getElementById('listaDebilidades');
+  const tiposPokemon = traerListaTipos();
+  
+  for(let i = 0; i < tiposPokemon.length; i++){
+    const boton = document.createElement('button');
+   
+    boton.value = tiposPokemon[i];
+    const crearBoton = document.createTextNode(tiposPokemon[i]);
+    boton.appendChild(crearBoton);
+    contenedorBotones.appendChild(boton);
+    }
+    
+  }
+
+function  eventoBoton(event){
+  console.log(event.target.value);
+  // const boSeleccionada = event.target.value;
+  // const valorTipo = filtrarTipo(opcionSeleccionada,personajes);
+  // console.log(valorTipo);
+  // crearTarjetas(valorTipo);
+}
+
+// const titulosTabla = ['ID', 'NAME', 'PLATE'];
+// const objects3 = [
+//   {"id": "1", 'name': "jetta",  'plate': "DFG-1222"},
+//   {"id": "2", 'name': "fusion", 'plate': "DFF-3342"}
+// ];
+
 
 //console.log(personajes.type);
 // console.log(mostrarValorTipos());
@@ -174,7 +223,7 @@ function listaDeTipos(){
 
   const listaTipos =[];
   for(let i = 0; i < personajes.length; i++){
-    const miniListaTipos = personajes[i].type
+    const miniListaTipos = personajes[i].type 
     for (let j =0; j< miniListaTipos.length; j++ ){
       const soloUnTipo = miniListaTipos[j];
       if (!listaTipos.includes(soloUnTipo)){
