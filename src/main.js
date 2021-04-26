@@ -17,6 +17,7 @@ function crearTarjetas(personajes){
     nuevoElemento.className = 'tarjeta';
     nuevoNombre.id = personajes[i].num;
     nuevoNombre.className = 'nombrePokemon';
+    nuevaImagen.className = 'imagenPokemon';
     
     nuevaImagen.src = personajes[i].img;
     nuevoNombre.innerHTML = personajes[i].name;
@@ -171,49 +172,31 @@ function pegaInfo(){
   genera_tabla(titulosTabla, resultadoOrdenado);
 }
 
-document.getElementById('debilidad').addEventListener('click', eventoBoton);
+document.getElementById('debilidad').addEventListener('click', botonesDebilidades);
 function botonesDebilidades(){
   const contenedorBotones = document.getElementById('listaDebilidades');
   const tiposPokemon = traerListaTipos();
   
   for(let i = 0; i < tiposPokemon.length; i++){
     const boton = document.createElement('button');
-   
-    boton.value = tiposPokemon[i];
-    const crearBoton = document.createTextNode(tiposPokemon[i]);
-    boton.appendChild(crearBoton);
+    boton.innerHTML = tiposPokemon[i];
     contenedorBotones.appendChild(boton);
-    }
-    
+    boton.className = "miBoton"
+    boton.value = tiposPokemon[i];
+    boton.id = tiposPokemon[i];
+    let botonSeleccionado = document.getElementsByClassName("miBoton");
+    botonSeleccionado[i].addEventListener('click', funcionalidadBoton);
   }
-
-function  eventoBoton(event){
-  console.log(event.target.value);
-  // const boSeleccionada = event.target.value;
-  // const valorTipo = filtrarTipo(opcionSeleccionada,personajes);
-  // console.log(valorTipo);
-  // crearTarjetas(valorTipo);
 }
 
-// const titulosTabla = ['ID', 'NAME', 'PLATE'];
-// const objects3 = [
-//   {"id": "1", 'name': "jetta",  'plate': "DFG-1222"},
-//   {"id": "2", 'name': "fusion", 'plate': "DFF-3342"}
-// ];
+function funcionalidadBoton(event){
+  const botonSeleccionado = event.currentTarget.value;
+  const datosDebilidad = filtrarDebilidad(botonSeleccionado, personajes)
+  console.log(botonSeleccionado);
+  console.log(datosDebilidad);
+  crearTarjetas(datosDebilidad);
+}
 
-
-//console.log(personajes.type);
-// console.log(mostrarValorTipos());
-//busqueda por tipos
-// function traerInfoTipos(){
-//   const listaTipos =[];  
-//   for(let i = 0; i < personajes.length; i++){
-//     const miniListaTipos = personajes[i].type
-//     for (let j =0; j< miniListaTipos.length; j++ ){
-//       const soloUnTipo = miniListaTipos[j];
-//     }
-//   }    
-// }
 /*document.getElementById('tiposBanner').addEventListener('click', listaDeTipos);
 function listaDeTipos(){
   const contenedorTipos = document.getElementById('tipos');

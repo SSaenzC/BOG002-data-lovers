@@ -16,7 +16,8 @@ body{
 
 header{
   width: 100%;
-  background: #4e94ab;
+  background: rgb(0,58,112);
+  margin-bottom: 2%;
 }
 
 #btn-menu{
@@ -91,20 +92,16 @@ header label:hover{
 }
 
 .redSocial{
-  width: 10%;
+  width: 5%;
 }
 
 /*pokedex.html*/
 .contenedor{
   width: 100%;
   height: auto;
+  margin-left: 2%;
 }
 
-.imagen{
-  width: 50%;
-  background-color: cyan;
-  margin: px 50px 75px 100px;
-}
 
 .tarjeta{
     display: inline-grid;
@@ -113,10 +110,18 @@ header label:hover{
     box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, .2);
     grid-template-columns: auto;
     height: 40vh;
-    background-color: rgb(210, 255,226);
+    background-color: rgb(238, 215, 124);
     margin: 0px 20px 20px 0px;
     border-style: hidden;
   }
+
+.tarjeta:hover, .imagenPokemon:hover{
+  color: rgb(0,0,0,0.3);
+}
+
+.imagenPokemon{
+margin-left: 35%;
+}
 
   /*modal*/
 .modal{
@@ -153,6 +158,110 @@ header label:hover{
   color: black;
   text-decoration: none;
   cursor: pointer;
+}
+
+.nombrePokemon{
+  background-color: rgb(91, 149, 219);
+  border-radius: 10px;
+  height: 50%;
+  font-size: medium;
+  color: white;
+}
+.nombrePokemon:hover{
+  color: rgb(0,58,112);
+}
+
+#filtrarBusqueda{
+  width: 30%;
+  margin-bottom: 2%;
+  margin-left: 2%;
+}
+
+/*estilos botones debilidades*/
+.listaDebilidades{
+  margin-bottom: 2%;
+}
+.miBoton{
+  color: #fefefe;
+  border: 1px solid #c3cace;
+  border-radius: 4px;
+  box-shadow: 0 3px 9px rgba(0,0,0,.3);
+  text-align: center;
+  font-size: medium;
+  margin-left: 0.5%;
+  width: 5%;
+}
+
+#normal{
+  background-color: #a8a878;
+}
+
+#fighting{
+  background-color: #c02038;
+}
+
+#poison{
+  background-color: #a040a0;
+}
+
+#flying{
+  background-color: #a890f0;
+}
+
+#ground{
+  background-color: #e0c068;
+}
+
+#rock{
+  background-color: #b8a038;
+}
+
+#bug{
+  background-color: #a8b820;
+}
+
+#ghost{
+  background-color: #705898;
+}
+
+#steel{
+  background-color: #b8b8d0;
+}
+
+#fire{
+  background-color: #f08030;
+}
+
+#water{
+  background-color: #6890f0;
+}
+
+#grass{
+  background-color: #78c850;;
+}
+
+#electric{
+  background-color: #f8d030;
+}
+
+#psychic{
+  background-color: #f85888;
+}
+
+#ice{
+  background-color: #98d8d8;
+}
+
+#dragon{
+  background-color: #7038f8;
+}
+
+#dark{
+  background-color: #705848;
+}
+
+#fairy{
+  background-color: #ee99ac;
 }
 /*main{
   width: 100%;
