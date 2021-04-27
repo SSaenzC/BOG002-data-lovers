@@ -1,12 +1,9 @@
-import { filtrarNombre, filtrarTipo, organizarAparicion, filtrarDebilidad } from './data.js';
+import { filtrarNombre, filtrarTipo,organizarAparicion,filtrarDebilidad} from './data.js';
 // import data from './data/lol/lol.js';
 import data from './data/pokemon/pokemon.js';
 // import data from './data/rickandmorty/rickandmorty.js';
 
-let personajes = data.pokemon;
-
-//console.log(organizarAparicion(personajes));
-
+const personajes = data.pokemon;
 
 function crearTarjetas(personajes){ 
   let contenedorpersonajes = document.getElementById("contenedor");
@@ -20,6 +17,7 @@ function crearTarjetas(personajes){
     nuevoElemento.className = 'tarjeta';
     nuevoNombre.id = personajes[i].num;
     nuevoNombre.className = 'nombrePokemon';
+    nuevaImagen.className = 'imagenPokemon';
     
     nuevaImagen.src = personajes[i].img;
     nuevoNombre.innerHTML = personajes[i].name;
@@ -88,6 +86,7 @@ function realizarBusqueda(){
   console.log(valorIngresado);
   let resultadoFiltro = filtrarNombre (valorIngresado, personajes);
   crearTarjetas(resultadoFiltro);
+  console.log(resultadoFiltro);
 }
 
 //Esta función nos trae los tipos de pokemon
@@ -108,7 +107,6 @@ function traerListaTipos (){
 //esta función le da la funcionalidad al boton tipos
 document.getElementById('tiposBanner').addEventListener('click', selectTiposPokemon);
 function selectTiposPokemon(){
-  document.getElementById("topDiez").style.display="none"
   document.getElementById('filtrarBusqueda').style.display="none";
   const contenedorTipos = document.getElementById('tipos');
   const selectTipos = document.createElement('select');
@@ -125,7 +123,7 @@ function selectTiposPokemon(){
   opcionSeleccionar.addEventListener('change', mostrarValorTipos);
 }
 
-// Obtiene el valor del select
+// opcionSeleccionar.addEventListener("change", mostrarValorTipos);
 function  mostrarValorTipos(event){
   console.log(event.target.value);
   const opcionSeleccionada = event.target.value;
@@ -133,7 +131,7 @@ function  mostrarValorTipos(event){
   console.log(valorTipo);
   crearTarjetas(valorTipo);
 }
-  
+
 // Crea la tabla del top 10 de aparicion de Pokemon
 document.getElementById('topAparicion').addEventListener('click', pegaInfo);
 function genera_tabla(titulos, pokemons) {
@@ -173,85 +171,32 @@ function pegaInfo(){
   const resultadoOrdenado = organizarAparicion(personajes);
   const titulosTabla = ['num', 'name', 'spawn-chance'];
   genera_tabla(titulosTabla, resultadoOrdenado);
-
 }
-// Funcion donde se crean los botones 
-document.getElementById('debilidad').addEventListener('click', botonesDebilidades);
 
+document.getElementById('debilidad').addEventListener('click', botonesDebilidades);
 function botonesDebilidades(){
   const contenedorBotones = document.getElementById('listaDebilidades');
   const tiposPokemon = traerListaTipos();
   
   for(let i = 0; i < tiposPokemon.length; i++){
     const boton = document.createElement('button');
-    
-    const crearBoton = document.createTextNode(tiposPokemon[i]);
-    boton.appendChild(crearBoton);
-    boton.id = "myButton"
-    boton.value = tiposPokemon[i];
+    boton.innerHTML = tiposPokemon[i];
     contenedorBotones.appendChild(boton);
-    }
-    let botonSeleccionado = document.getElementById("myButton");
-    botonSeleccionado.addEventListener('click', funcionalidadBoton);
+    boton.className = "miBoton"
+    boton.value = tiposPokemon[i];
+    boton.id = tiposPokemon[i];
+    let botonSeleccionado = document.getElementsByClassName("miBoton");
+    botonSeleccionado[i].addEventListener('click', funcionalidadBoton);
   }
-
-
-function funcionalidadBoton(event){
-  //console.log('funcionando');
-  const botonSeleccionado = event.target.value;
-  const datosDebilidad = filtrarDebilidad(botonSeleccionado, personajes)
-  console.log(datosDebilidad);
-  crearTarjetas(datosDebilidad);
-
-  console.log(event.target.value);
-  // const opcionSeleccionada = event.target.value;
-  // const valorTipo = filtrarTipo(opcionSeleccionada,personajes);
-  // console.log(valorTipo);
-  // crearTarjetas(valorTipo);
 }
 
-
-
-
-
-
-
-  // 
-  // const valorTipo = filtrarTipo(opcionSeleccionada,personajes);
-  // console.log(valorTipo);
-  // crearTarjetas(valorTipo);
-
-// const objects3 = [
-//   {"id": "1", 'name': "jetta",  'plate': "DFG-1222"},
-//   {"id": "2", 'name': "fusion", 'plate': "DFF-3342"}
-// ];
-
-// genera_tabla(titulosTabla, objects3);
-
-
-
-  // var row = footer.insertRow(0);
-  // var cell = row.insertCell(0);
-  // cell.innerHTML = "<b>This is a table footer</b>";
-  // const contenedorTabla = document.getElementById('topDiez');
-  // const tabla = document.createElement('table');
-  // const encabezado = document.createElement('thead');
-  // const cuerpo = document.createElement('tbody');
-
-  // tabla.appendChild(encabezado);
-  // tabla.appendChild(cuerpo);
-  // contenedorTabla.appendChild(tabla);
-
-
-// document.getElementById('topAparicion').addEventListener('click', frecuenciaAparicion);
-// function frecuenciaAparicion(){
-//   const arrayEncounter = personajes["spawn-chance"];
-//   console.log(arrayEncounter);
-//   const encuentroOrganizado = organizarEncounter(arrayEncounter, personajes);
-//  // console.log(encuentroOrganizado);
-//   //const aparicionPersonajes = personajes
-// }
-
+function funcionalidadBoton(event){
+  const botonSeleccionado = event.currentTarget.value;
+  const datosDebilidad = filtrarDebilidad(botonSeleccionado, personajes)
+  console.log(botonSeleccionado);
+  console.log(datosDebilidad);
+  crearTarjetas(datosDebilidad);
+}
 
 /*document.getElementById('tiposBanner').addEventListener('click', listaDeTipos);
 function listaDeTipos(){
@@ -261,7 +206,7 @@ function listaDeTipos(){
   contenedorTipos.appendChild(selectTipos);// colocando el select en el div que destine en el html
   const listaTipos =[];
   for(let i = 0; i < personajes.length; i++){
-    const miniListaTipos = personajes[i].type
+    const miniListaTipos = personajes[i].type 
     for (let j =0; j< miniListaTipos.length; j++ ){
       const soloUnTipo = miniListaTipos[j];
       if (!listaTipos.includes(soloUnTipo)){
