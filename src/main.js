@@ -190,7 +190,7 @@ function botonesDebilidades(){
 }
 
 function funcionalidadBoton(event){
-  const botonSeleccionado = event.currentTarget.value;
+  const botonSeleccionado = event.target.value;
   const datosDebilidad = filtrarDebilidad(botonSeleccionado, personajes)
   console.log(botonSeleccionado);
   console.log(datosDebilidad);
