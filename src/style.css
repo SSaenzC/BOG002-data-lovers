@@ -8,6 +8,7 @@ body{
   width:auto;
   height: auto;
   font-family: 'Josefin Slab', serif;
+<<<<<<< HEAD
 }
 
 :root{
@@ -58,10 +59,149 @@ header label:hover{
   color: white;
   text-decoration: none;
 }
+=======
+}
+
+:root{
+  scroll-behavior: smooth;
+}
+
+header{
+  width: 100%;
+  height: 40vh;
+ 
+  background-image:linear-gradient(to left, hsla(204, 64%, 44%, 0.575), hsl(141, 100%, 91%)),url(../src/imagenes/LogoU.png);
+  background-repeat: no-repeat; 
+  
+  background-position: center;
+ 
+ text-align: center;
+  margin: 0;
+  padding: 0;
+  border-radius: 20px;
+}
+
+#btn-menu{
+  display: none;
+}
+
+header label{
+  display: none;
+  width: 30px;
+  height: 30px;
+  padding: 10px;
+  border-right: 1px solid #fff;
+}
+
+header label:hover{
+  cursor: pointer;
+  background: rgb(0,0,0,0.3);
+}
+
+.menu ul{
+  margin: 0;
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: flex-end; /*posiciona el elemento hacia la derecha*/
+}
+
+.menu li{
+  border-right: 1px solid white;
+}
+
+.menu li:hover{
+  background: rgb(0,0,0,0.3);
+}
+
+.menu li a{
+  display: block;
+  padding: 15px 30px;
+  color: white;
+  text-decoration: none;
+}
+/*buscadores*/
+.contenedorDeBusquedas {
+  width: 100%;
+  height: 20vh;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+}
+
+/*.containerBusqueda {
+	background: #fff;
+	width: 30%;
+ 
+	box-shadow: 0px 0px 0px rgba(0, 0, 0, .16);
+	border-radius: 10px;
+	cursor: pointer;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: .2s ease all;
+	margin-bottom: 30px;
+	padding: 10px;
+	position: relative;
+	z-index: 200;
+	border: 2px solid transparent;
+  margin: 1%;
+  
+}
+
+.containerBusqueda.active,
+.containerBusqueda:hover {
+	box-shadow: 0px 5px 10px rgba(0, 0, 0, .16);
+	border: 2px solid hsl(141, 100%, 91%);
+}
+
+.containerBusqueda i {
+	font-size: 30px;
+	margin-left: 30px;
+	color: #4e94ab;
+}
+
+.containerBusqueda.active:before {
+	content: "";
+	display: block;
+	height: 0;
+	width: 0;
+	border-top: 15px solid rgb(210, 255,226);
+	border-right: 15px solid transparent;
+	border-bottom: 15px solid transparent;
+	border-left: 15px solid transparent;
+	position: absolute;
+	bottom: -30px;
+	left: calc(50% - 15px);
+}
+
+#filtrarBusqueda, #filtrarTipo{
+  background: #fff;
+  width: 100%;
+  justify-content: center;
+  display: flex;
+  border: 2px solid transparent;
+  font-family:  'Josefin Slab', serif;
+  font-size: 20px;
+  
+}
+
+input[type=text] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 3px solid rgb(210, 255,226);
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: none;
+}*/
+>>>>>>> prueba
 
 @media(max-width:868px){
   header label{
     display: block;
+<<<<<<< HEAD
   }
   .menu{
     position: absolute;
@@ -79,6 +219,27 @@ header label:hover{
   #btn-menu:checked ~ .menu{
     margin: 0;
   }
+=======
+  }
+  .menu{
+    position: absolute;
+    background: rgb(156, 211, 236);
+    width: 50%;
+    margin-left: -70%;
+    transition: all 0.5s;
+  }
+  .menu ul  {
+    flex-direction: column;
+  }
+  .menu li{
+    border-top: 1px solid white;
+  }
+  #btn-menu:checked ~ .menu{
+    margin: 0;
+  }
+
+
+>>>>>>> prueba
 }
 
 .img-footer{
@@ -94,6 +255,7 @@ header label:hover{
   width: 10%;
 }
 
+<<<<<<< HEAD
 /*pokedex.html*/
 .contenedor{
   width: 100%;
@@ -106,6 +268,19 @@ header label:hover{
   background-color: cyan;
   margin: px 50px 75px 100px;
 }
+=======
+.contenedor{
+  width: 100%;
+  height: auto;
+  margin:0px 10px 10px 0px;
+}
+
+/*.imagen{
+  width: 50%;
+  background-color: cyan;
+  margin: px 50px 75px 100px;
+}*/
+>>>>>>> prueba
 
 .tarjeta{
     display: inline-grid;
@@ -118,22 +293,35 @@ header label:hover{
     background-color: rgb(210, 255,226);
     margin: 0px 20px 20px 50px;
     border-style: hidden;
+<<<<<<< HEAD
     border-radius: radius;
+=======
+    
+>>>>>>> prueba
 
   }
 
   /*modal*/
 .modal{
+<<<<<<< HEAD
   display: flex; /* Hidden by default */
   justify-content: center;
   align-items: center;
   text-align: center;
   transition: transform 1s;
   transform: translateY(0%);
+=======
+  display: none; /* Hidden by default */
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  
+>>>>>>> prueba
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
   left: 0;
   top: 0;
+<<<<<<< HEAD
   width: 25%; /* Full width */
   height: 60%; /* Full height */
   overflow: auto; /* Enable scroll if needed */
@@ -143,7 +331,16 @@ header label:hover{
 
   
 }
+=======
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(198, 251, 255); /* Black w/ opacity */
+  
+>>>>>>> prueba
 
+  
+}
 
 .modal-content {
   background-color: black;
@@ -153,6 +350,7 @@ header label:hover{
   width: 80%; /* Could be more or less, depending on screen size */
 }
 
+<<<<<<< HEAD
 /* The Close Button */
 .close {
   color: #aaa;
@@ -161,6 +359,18 @@ header label:hover{
   font-weight: bold;
 }
 
+=======
+
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+>>>>>>> prueba
 .close:hover,
 .close:focus {
   color: black;
