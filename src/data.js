@@ -29,4 +29,3 @@ export const filtrarDebilidad = (debilidad, pokemons) => {
 }
 
 //sortData(data, sortBy, sortOrder)
-
